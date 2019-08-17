@@ -53,13 +53,17 @@
         }
         @keyframes rotate{
             0%{transform: rotate(0deg)}
-            25%{transform: rotate(2deg)}
-            50%{transform: rotate(4deg)}
-            75%{transform: rotate(6deg)}
-            100%{transform: rotate(8deg)}
+            25%{transform: rotate(3deg)}
+            50%{transform: rotate(6deg)}
+            75%{transform: rotate(9deg)}
+            100%{transform: rotate(12deg)}
             }
-        #could{
-         margin-left:100px;
+        #cloud{
+            margin-top: -40px;
+         margin-left:50px;
+         animation-name: rotate;
+            animation-duration:0.5s;
+            animation-iteration-count: infinite;
          height:80px;
          width:80px;
         
@@ -73,7 +77,7 @@
     <body>
         <div id="headingdiv">
         <h1 id="headtext">pING-mE-uP</h1>
-        <img src="cloud.png" id="cloud">
+        
         </div>
 
         <div id="login-div">
@@ -83,6 +87,7 @@
         </div>
        
             <div id="chat-div" style="display:none">
+                <img src="cloud.png" id="cloud" style="display:none">
             <input placeholder="What's up" type="text" id="msgbox">
             <button id="sendmsg">SEND</button>
             <ul id="msglist"></ul>

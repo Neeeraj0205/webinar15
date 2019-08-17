@@ -11,6 +11,7 @@ $(function () {
     let loginbtn = $('#loginbtn')
     let loginDiv = $('#login-div')
     let chatDiv = $('#chat-div')
+    let cloud = $('#cloud')
   
    let user=' '
    loginbtn.click(function(){
@@ -24,6 +25,7 @@ $(function () {
     
 
     sendbtn.click(function () {
+        cloud.show()
         socket.emit('send_msg', {
             user:user,
             message: msgbox.val()
