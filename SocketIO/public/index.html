@@ -17,7 +17,6 @@
             margin-left: 200px;
             font-size:45px;
             font-family:"Comic Sans MS", cursive, sans-serif
-
         }
         #msgbox{
            
@@ -52,8 +51,19 @@
             animation-iteration-count: infinite;
            
         }
-
+        @keyframes rotate{
+            0%{transform: rotate(0deg)}
+            25%{transform: rotate(2deg)}
+            50%{transform: rotate(4deg)}
+            75%{transform: rotate(6deg)}
+            100%{transform: rotate(8deg)}
+            }
+        #could{
+         margin-left:100px;
+         height:80px;
+         width:80px;
         
+        }
          
         </style>
         <script src="jquery-3.4.1.js"></script>
@@ -63,6 +73,7 @@
     <body>
         <div id="headingdiv">
         <h1 id="headtext">pING-mE-uP</h1>
+        <img src="cloud.png" id="cloud">
         </div>
 
         <div id="login-div">
