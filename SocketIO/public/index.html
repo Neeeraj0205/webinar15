@@ -5,10 +5,12 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <style type = "text/css" media = "all">
+        
         #headingdiv {
-            background-color: linen;
-            margin-top:-20px;
-            width:70px;
+            background-color:linen;
+            margin-top:-40px;
+            width:1350px;
+            height:80px;
         }
         #headtext{
             color: maroon;
@@ -17,7 +19,42 @@
             font-family:"Comic Sans MS", cursive, sans-serif
 
         }
+        #msgbox{
+           
+           width:1270px;
+           height:25px;
+        }
+        #sendmsg{
+            color:maroon
+        }
+        #loginbox{
+            width:1270px;
+           height:25px;
+        }
+        #msg{
+            color: maroon;
+            margin-left:100px;
+            width:100px;
+            font-size:25px;
+            font-family:"Comic Sans MS", cursive, sans-serif
+        }
+        @keyframes size{
+            0%{font-size: 25px}
+            25%{font-size:25.5px}
+            50%{font-size:26px}
+            75%{font-size:26.5px}
+            100%{font-size:27px}
+            }
+        #msg:hover{
+            color:maroon;
+            animation-name: size;
+            animation-duration:0.75s;
+            animation-iteration-count: infinite;
+           
+        }
 
+        
+         
         </style>
         <script src="jquery-3.4.1.js"></script>
         <script src="/socket.io/socket.io.js"></script>
@@ -27,12 +64,18 @@
         <div id="headingdiv">
         <h1 id="headtext">pING-mE-uP</h1>
         </div>
+
+        <div id="login-div">
+            <input placeholder="What's your name" type="text" id="loginbox">
+            <button id="loginbtn">LOGIN</button>
+           
+        </div>
        
-        
-            <input placeholder="new message" type="text" id="msgbox">
+            <div id="chat-div" style="display:none">
+            <input placeholder="What's up" type="text" id="msgbox">
             <button id="sendmsg">SEND</button>
             <ul id="msglist"></ul>
-        
+        </div>
         
     </body>
 </html>
