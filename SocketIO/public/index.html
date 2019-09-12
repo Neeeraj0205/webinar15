@@ -5,15 +5,25 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <style type = "text/css" media = "all">
-        
+        @keyframes color{
+            0%{background-color: linen}
+            33%{background-color: linen}
+            66%{background-color: pink}
+            100%{background-color: pink}
+        }
+       
         #headingdiv {
-            background-color:linen;
+            animation-name: color;
+            animation-duration:1.5s;
+            animation-iteration-count: infinite;
+           
             margin-top:-40px;
             width:1350px;
             height:80px;
         }
         #headtext{
-            color: maroon;
+           
+            color:black;
             margin-left: 200px;
             font-size:45px;
             font-family:"Comic Sans MS", cursive, sans-serif
@@ -33,9 +43,13 @@
         #msg{
             color: maroon;
             margin-left:100px;
-            width:100px;
-            font-size:25px;
+            margin-top: 10px;
+            
+            font-size:20px;
             font-family:"Comic Sans MS", cursive, sans-serif
+        }
+        #msglist{
+            width:400px;
         }
         @keyframes size{
             0%{font-size: 25px}
@@ -53,21 +67,33 @@
         }
         @keyframes rotate{
             0%{transform: rotate(0deg)}
-            25%{transform: rotate(3deg)}
-            50%{transform: rotate(6deg)}
-            75%{transform: rotate(9deg)}
-            100%{transform: rotate(12deg)}
+            25%{transform: rotate(5deg)}
+            50%{transform: rotate(10deg)}
+            75%{transform: rotate(15deg)}
+            100%{transform: rotate(20deg)}
             }
         #cloud{
-            margin-top: -40px;
-         margin-left:50px;
+            margin-top: 20px;
+         margin-left:10px;
          animation-name: rotate;
-            animation-duration:0.5s;
+            animation-duration:0.75s;
             animation-iteration-count: infinite;
-         height:80px;
-         width:80px;
+         height:70px;
+         width:70px;
         
         }
+       
+        .boygirl{
+            height:370px;
+            width:370px;
+        }
+        #msgimg1{
+            margin-left:30px;
+        margin-top:90px;}
+        #msgimg{
+            
+            margin-left:500px;
+        margin-top:100px}
          
         </style>
         <script src="jquery-3.4.1.js"></script>
@@ -85,12 +111,18 @@
             <button id="loginbtn">LOGIN</button>
            
         </div>
+        <div id="imgdiv">
+            <img src="boymsg.jpg" id="msgimg1" class="boygirl" >
+            <img src="girlmsg.jpg" id="msgimg" class="boygirl">
+        </div> 
        
             <div id="chat-div" style="display:none">
-                <img src="cloud.png" id="cloud" style="display:none">
+                
             <input placeholder="What's up" type="text" id="msgbox">
             <button id="sendmsg">SEND</button>
-            <ul id="msglist"></ul>
+            <div>
+            <img src="cloud.png" id="cloud" style="display:none">
+            <ul id="msglist"></ul></div>
         </div>
         
     </body>

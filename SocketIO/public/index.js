@@ -12,9 +12,13 @@ $(function () {
     let loginDiv = $('#login-div')
     let chatDiv = $('#chat-div')
     let cloud = $('#cloud')
+    let img1 = $('#msgimg1')
+    let img = $('#msgimg')
+    let imgdiv = $('#imgdiv')
   
    let user=' '
    loginbtn.click(function(){
+       imgdiv.hide()
        user=loginbox.val()
        chatDiv.show()
        loginDiv.hide()
@@ -25,7 +29,7 @@ $(function () {
     
 
     sendbtn.click(function () {
-        cloud.show()
+        
         socket.emit('send_msg', {
             user:user,
             message: msgbox.val()
@@ -37,7 +41,8 @@ $(function () {
    
 
     socket.on('recv_msg', function (data) {
-        msglist.append($('<li id="msg">' +data.user+ ':' + data.message.split(':')[0].substr(1) + '</li>'))
+        cloud.show()
+        msglist.append($('<li id="msg">' +data.user+ ':' + data.message + '</li>'))
     })
     
 })
